@@ -84,10 +84,14 @@ Exo 12 Quel metteur en scène a tourné dans ses propres films ? Donner le nom, 
 select titre,prénom,nom from film as f
 inner join role as r on f.idfilm=r.idfilm
 
-
+select * from film
+select * from role
+select * from artiste
 Exo 13 Titre des films de Quentin Tarantino dans lesquels il n’a pas joué
-
-
+select titre,idréalisateur,prénom,nom from film as f
+inner join role as r on f.idfilm=r.idfilm
+inner join artiste as a on a.idartiste=r.idacteur
+where prénom='Quentin' and nom='Tarantino'
 
 Exo 14 Quel metteur en scène a tourné ́en tant qu’acteur ? Donner le nom, le rôle et le titre des films dans lesquels cet artiste a joué.
  
@@ -104,7 +108,7 @@ Exo 17 Les films sans rôle
 
 
 
-Exo 18 Quelles sont les films non notés par l'internaute Prénom1 Nom1
+Exo 18 Quelles sont les films non notés par l'internaute Prénom1 Nom1'
 
 
 
@@ -125,3 +129,5 @@ Exo 22 Nom et prénom des réalisateurs qui ont tourné au moins deux films.
 
 
 Exo 23 Quels films ont une moyenne des notes supérieure à 7
+select * from notemoyenne
+where moyenne > 7;
